@@ -9,7 +9,10 @@ import {
 import App from "./App.jsx";
 import About from "./components/About/About.jsx";
 import Contact from "./components/Contact/contact.jsx";
+import Github from "./components/Github/Github.jsx";
+import { githubInfoLoader } from "./components/Github/Github.jsx";
 import Home from "./components/Home/Home.jsx";
+import Users from "./components/Users/User.jsx";
 import "./index.css";
 import Layout from "./Layout.jsx";
 
@@ -18,6 +21,8 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<Home />} />
       <Route path="about" element={<About />} />
+      <Route path="users/:id" element={<Users />} />
+      <Route path="github" element={<Github />} loader={githubInfoLoader} />
       <Route path="contact-us" element={<Contact />} />
     </Route>
   )
